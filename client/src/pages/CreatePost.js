@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import filterOptions from "../assets/data/filterOptions";
 import createPostSettings from "../assets//data/createPostSettings";
 import CustomModal from "../components/CreatePost/CustomModal";
@@ -44,7 +44,7 @@ const errorMsg = {
   tags: "Please add at least one tag.",
 };
 
-export default (props) => {
+const CreatePost = (props) => {
   const [state, setState] = useState(initialState.state);
   const [formData, setFormData] = useState(initialState.formData);
   const [errors, setErrors] = useState(initialState.errors);
@@ -107,7 +107,7 @@ export default (props) => {
     if (!errors.length) {
       // todo: finish integrating api
       try {
-        const req = await axios.post("/api/posts", formData);
+        // const req = await axios.post("/api/posts", formData);
       } catch (error) {
         console.log(error);
       }
@@ -204,3 +204,5 @@ export default (props) => {
     </CreatePostWrapper>
   );
 };
+
+export default CreatePost;

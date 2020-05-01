@@ -66,7 +66,7 @@ const SocialButton = styled(Button).attrs((props) => ({
   margin: 0.5rem;
 `;
 
-export default ({ isLoginForm }) => {
+const Login = ({ isLoginForm }) => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -77,7 +77,7 @@ export default ({ isLoginForm }) => {
     if (code && state) {
       dispatch(authWithSocialProvider({ code, state }));
     }
-  }, [code, state]);
+  }, [code, state, dispatch]);
 
   const handleInputChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -203,3 +203,5 @@ export default ({ isLoginForm }) => {
     </div>
   );
 };
+
+export default Login;

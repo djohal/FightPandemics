@@ -20,7 +20,10 @@ import {
   WizardCheckboxItem,
 } from "../components/StepWizard";
 import { IconButton, SubmitButton, CustomButton } from "../components/Button";
-import { ShareMyLocationIcon } from "../components/Icon";
+
+// ICONS
+import SvgIcon from "../components/Icon/SvgIcon";
+import shareMyLocation from "~/assets/icons/share-my-location.svg";
 
 const INITIAL_STATE = {
   answers: [],
@@ -122,17 +125,12 @@ const Step2 = (props) => {
           />
         </WizardFormGroup>
         <IconButton
-          icon={<ShareMyLocationIcon />}
+          icon={<SvgIcon src={shareMyLocation} />}
           title="Share my location"
           onSelect={selectLocationDetection}
         />
         <SkipLink>
-          <CustomButton
-            textOnly
-            width="50%"
-            display="inline-flex"
-            onSelect={rejectLocationDetection}
-          >
+          <CustomButton secondary="true" onSelect={rejectLocationDetection}>
             Show me postings from anywhere
           </CustomButton>
         </SkipLink>
